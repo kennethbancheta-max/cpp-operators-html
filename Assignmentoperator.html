@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>C++ Basic Assignment Operators — A4</title>
+  <style>
+    @page { size: A4; margin: 20mm; }
+    html, body { height: 100%; }
+    body {
+      font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      margin: 0; padding: 0;
+      -webkit-print-color-adjust: exact;
+      color: #1a1a1a;
+      background: #ffffff;
+    }
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      padding: 18mm 18mm;
+      box-sizing: border-box;
+      margin: 10mm auto;
+      border: 1px solid #dcdcdc;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      position: relative;
+    }
+    header { text-align: center; margin-bottom: 12px; }
+    h1 { margin: 6px 0; font-size: 20pt; }
+    h2 { margin: 14px 0 6px; font-size: 14pt; }
+    h3 { margin: 10px 0; font-size: 12pt; }
+    .objectives { background: #f7fbff; padding: 10px; border-left: 4px solid #3b82f6; }
+    ul.objectives-list { margin: 8px 0 0 18px; }
+    section { margin-bottom: 10px; }
+    .operator-card { border: 1px solid #e6eef8; background: #ffffff; padding: 10px; border-radius: 6px; box-shadow: 0 1px 0 rgba(0,0,0,0.02); margin-bottom: 8px; }
+    .meta { font-size: 10pt; color: #444; }
+    .definition { margin: 8px 0; font-size: 11pt; }
+    pre.code { background: #f4f6fb; padding: 10px; border-radius: 4px; overflow-x: auto; font-family: Menlo, Consolas, monospace; font-size: 9.5pt; }
+    .nav-buttons { text-align: center; margin-top: 20px; }
+    .nav-buttons button { padding: 8px 16px; margin: 0 5px; font-size: 12pt; border: none; border-radius: 4px; cursor: pointer; background-color: #3b82f6; color: white; }
+    .nav-buttons button:hover { background-color: #2563eb; }
+    footer { position: absolute; bottom: 18mm; left: 18mm; right: 18mm; font-size: 9pt; color: #666; }
+    @media print { body { background: white; } .page { margin: 0; border: none; box-shadow: none; } footer { position: fixed; bottom: 6mm; } .nav-buttons { display: none; } }
+  </style>
+</head>
+<body>
+  <div class="page" id="page">
+    <header>
+      <h1>C++ - Basic Assignment Operators</h1>
+    </header>
+
+    <section class="objectives">
+      <h2>Learning Objectives</h2>
+      <ul class="objectives-list">
+        <li>To store values in variables during program execution.</li>
+        <li>To combine arithmetic and assignment efficiently (use compound operators).</li>
+        <li>To improve program readability by using concise syntax.</li>
+        <li>To reduce mistakes and improve maintainability by writing the variable name once.</li>
+        <li>To support iterative computations such as loops, counters, and accumulators.</li>
+        <li>To provide concise ways to increase, decrease, multiply, divide, or compute remainders for variables.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Basic Assignment Operators Covered</h2>
+      <p class="meta">Operators in this document: <code>=, +=, -=, *=, /=, %=</code></p>
+    </section>
+
+    <section>
+      <h2>1. Simple Assignment (<code>=</code>)</h2>
+      <div class="operator-card">
+        <h3>Detailed definition</h3>
+        <p class="definition">The simple assignment operator stores the value of the right-hand side (RHS) expression into the left-hand side (LHS) variable. The RHS expression is fully evaluated first; then the resulting value replaces any previous value in the LHS variable. This operator is used to initialize variables and update their values during runtime.</p>
+        <h3>Example</h3>
+        <pre class="code">#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int x;
+    x = 10;
+    cout &lt;&lt; "x = " &lt;&lt; x &lt;&lt; endl;
+    return 0;
+}
+</pre>
+      </div>
+    </section>
+
+    <section>
+      <h2>2. Add and Assign (<code>+=</code>)</h2>
+      <div class="operator-card">
+        <h3>Detailed definition</h3>
+        <p class="definition">The <code>+=</code> operator adds the RHS value to the current value of the LHS variable and assigns the resulting sum back into the LHS variable. It is a shorthand for <code>x = x + expression</code>. The RHS expression is evaluated first and then added to the current LHS value before assignment.</p>
+        <h3>Example</h3>
+        <pre class="code">int x = 5;
+x += 3;  // x is now 8
+</pre>
+      </div>
+    </section>
+
+    <section>
+      <h2>Real-world Example Using All Operators</h2>
+      <div class="operator-card">
+        <h3>Shopping Cart Scenario</h3>
+        <pre class="code">#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+int main() {
+    string customer = "John";
+    int totalItems = 0;
+    int totalPrice = 0;
+    int discount = 0;
+    int tax = 0;
+
+    totalItems = 5;
+    totalPrice = 100;
+
+    totalItems += 3;
+    totalPrice += 60;
+
+    totalItems -= 2;
+    totalPrice -= 40;
+
+    totalPrice *= 0.9; // 10% discount
+
+    tax = totalPrice;
+    tax /= 100;
+    tax *= 5;
+    totalPrice += tax;
+
+    int boxes = totalItems / 4;
+    int leftoverItems = totalItems;
+    leftoverItems %= 4;
+
+    cout &lt;&lt; "Customer: " &lt;&lt; customer &lt;&lt; endl;
+    cout &lt;&lt; "Total Items: " &lt;&lt; totalItems &lt;&lt; endl;
+    cout &lt;&lt; "Total Price: $" &lt;&lt; totalPrice &lt;&lt; endl;
+    cout &lt;&lt; "Boxes: " &lt;&lt; boxes &lt;&lt; ", Leftover Items: " &lt;&lt; leftoverItems &lt;&lt; endl;
+
+    return 0;
+}</pre>
+  </div>
+
+
+<div class="nav-buttons">
+<a href="previouspage.html"><button>&laquo; Previous</button></a>
+<a href="comparisonoperator.html"><button>Next &raquo;</button></a>
+</div>
+</section>
+
+
+<footer></footer>
+</div>
+
+  <script>
+    function previousPage() {
+      alert('Previous page functionality not implemented yet.');
+    }
+    function nextPage() {
+      alert('Next page functionality not implemented yet.');
+    }
+  </script>
+</body>
+</html>

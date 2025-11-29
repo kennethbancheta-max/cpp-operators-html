@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>C++ Comparison Operators — A4</title>
+  <style>
+    @page { size: A4; margin: 20mm; }
+    html, body { height: 100%; }
+    body {
+      font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      margin: 0; padding: 0;
+      -webkit-print-color-adjust: exact;
+      color: #1a1a1a;
+      background: #ffffff;
+    }
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      padding: 18mm 18mm;
+      box-sizing: border-box;
+      margin: 10mm auto;
+      border: 1px solid #dcdcdc;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      position: relative;
+    }
+    header { text-align: center; margin-bottom: 12px; }
+    h1 { margin: 6px 0; font-size: 20pt; }
+    h2 { margin: 14px 0 6px; font-size: 14pt; }
+    h3 { margin: 10px 0; font-size: 12pt; }
+    .objectives { background: #f7fbff; padding: 10px; border-left: 4px solid #3b82f6; }
+    ul.objectives-list { margin: 8px 0 0 18px; }
+    section { margin-bottom: 10px; }
+    .operator-card { border: 1px solid #e6eef8; background: #ffffff; padding: 10px; border-radius: 6px; box-shadow: 0 1px 0 rgba(0,0,0,0.02); margin-bottom: 8px; }
+    .meta { font-size: 10pt; color: #444; }
+    .definition { margin: 8px 0; font-size: 11pt; }
+    pre.code { background: #f4f6fb; padding: 10px; border-radius: 4px; overflow-x: auto; font-family: Menlo, Consolas, monospace; font-size: 9.5pt; }
+    .nav-buttons { text-align: center; margin-top: 20px; }
+    .nav-buttons button { padding: 8px 16px; margin: 0 5px; font-size: 12pt; border: none; border-radius: 4px; cursor: pointer; background-color: #3b82f6; color: white; }
+    .nav-buttons button:hover { background-color: #2563eb; }
+    footer { position: absolute; bottom: 18mm; left: 18mm; right: 18mm; font-size: 9pt; color: #666; }
+    @media print { body { background: white; } .page { margin: 0; border: none; box-shadow: none; } footer { position: fixed; bottom: 6mm; } .nav-buttons { display: none; } }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <h1>C++ - Comparison Operators</h1>
+    </header>
+
+    <section class="objectives">
+      <h2>Learning Objectives</h2>
+      <ul class="objectives-list">
+        <li>To compare two values using relational operators.</li>
+        <li>To make decisions in the program using boolean outcomes.</li>
+        <li>To combine comparison with logical operators for complex conditions.</li>
+        <li>To use comparisons in loops, conditions, and data validation.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Comparison Operators Covered</h2>
+      <p class="meta">Operators in this document: <code>==, !=, &gt;, &lt;, &gt;=, &lt;=</code></p>
+    </section>
+
+    <section>
+      <h2>1. Equal to (<code>==</code>)</h2>
+      <div class="operator-card">
+        <h3>Detailed definition</h3>
+        <p class="definition">The <code>==</code> operator checks whether two operands are equal. It returns <code>true</code> if they are equal, otherwise <code>false</code>.</p>
+        <h3>Example</h3>
+        <pre class="code">int a = 5;
+int b = 5;
+if(a == b) {
+    cout &lt;&lt; "a and b are equal" &lt;&lt; endl;
+}</pre>
+      </div>
+    </section>
+
+    <section>
+      <h2>2. Not equal to (<code>!=</code>)</h2>
+      <div class="operator-card">
+        <h3>Detailed definition</h3>
+        <p class="definition">The <code>!=</code> operator checks whether two operands are not equal. Returns <code>true</code> if they are not equal, otherwise <code>false</code>.</p>
+        <h3>Example</h3>
+        <pre class="code">int a = 5;
+int b = 3;
+if(a != b) {
+    cout &lt;&lt; "a and b are not equal" &lt;&lt; endl;
+}</pre>
+      </div>
+    </section>
+
+    <section>
+      <h2>3. Greater than (<code>&gt;</code>)</h2>
+      <div class="operator-card">
+        <h3>Detailed definition</h3>
+        <p class="definition">The <code>&gt;</code> operator checks if the left operand is greater than the right operand. Returns <code>true</code> if it is, otherwise <code>false</code>.</p>
+        <h3>Example</h3>
+        <pre class="code">int a = 7;
+int b = 5;
+if(a &gt; b) {
+    cout &lt;&lt; "a is greater than b" &lt;&lt; endl;
+}</pre>
+      </div>
+    </section>
+
+    <section>
+      <h2>4. Less than (<code>&lt;</code>)</h2>
+      <div class="operator-card">
+        <h3>Detailed definition</h3>
+        <p class="definition">The <code>&lt;</code> operator checks if the left operand is less than the right operand. Returns <code>true</code> if it is, otherwise <code>false</code>.</p>
+        <h3>Example</h3>
+        <pre class="code">int a = 2;
+int b = 5;
+if(a &lt; b) {
+    cout &lt;&lt; "a is less than b" &lt;&lt; endl;
+}</pre>
+      </div>
+    </section>
+
+    <section>
+      <h2>5. Greater than or equal to (<code>&gt;=</code>)</h2>
+      <div class="operator-card">
+        <h3>Detailed definition</h3>
+        <p class="definition">The <code>&gt;=</code> operator checks if the left operand is greater than or equal to the right operand. Returns <code>true</code> if it is, otherwise <code>false</code>.</p>
+        <h3>Example</h3>
+        <pre class="code">int a = 5;
+int b = 5;
+if(a &gt;= b) {
+    cout &lt;&lt; "a is greater than or equal to b" &lt;&lt; endl;
+}</pre>
+      </div>
+    </section>
+
+    <section>
+      <h2>6. Less than or equal to (<code>&lt;=</code>)</h2>
+      <div class="operator-card">
+        <h3>Detailed definition</h3>
+        <p class="definition">The <code>&lt;=</code> operator checks if the left operand is less than or equal to the right operand. Returns <code>true</code> if it is, otherwise <code>false</code>.</p>
+        <h3>Example</h3>
+        <pre class="code">int a = 3;
+int b = 5;
+if(a &lt;= b) {
+    cout &lt;&lt; "a is less than or equal to b" &lt;&lt; endl;
+}</pre>
+      </div>
+    </section>
+
+    <section>
+      <h2>Real-world Example Using All Comparison Operators</h2>
+      <div class="operator-card">
+        <h3>Age Validation</h3>
+        <pre class="code">int age = 20;
+if(age &gt;= 18) {
+    cout &lt;&lt; "Eligible to vote" &lt;&lt; endl;
+}
+if(age &lt; 18) {
+    cout &lt;&lt; "Not eligible to vote" &lt;&lt; endl;
+}
+if(age == 20) {
+    cout &lt;&lt; "Age is exactly 20" &lt;&lt; endl;
+}
+if(age != 25) {
+    cout &lt;&lt; "Age is not 25" &lt;&lt; endl;
+}</pre>
+</div>
+
+
+<div class="nav-buttons">
+<a href="Assignmentoperator.html"><button>&laquo; Previous</button></a>
+<a href="logical.html"><button>Next &raquo;</button></a>
+</div>
+</section>
+
+
+<footer></footer>
+</div>
+
+  <script>
+    function previousPage() { alert('Previous page functionality not implemented yet.'); }
+    function nextPage() { alert('Next page functionality not implemented yet.'); }
+  </script>
+</body>
+</html>

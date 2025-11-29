@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>C++ Logical Operators — A4</title>
+  <style>
+    @page { size: A4; margin: 20mm; }
+    html, body { height: 100%; }
+    body {
+      font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      margin: 0; padding: 0;
+      -webkit-print-color-adjust: exact;
+      color: #1a1a1a;
+      background: #ffffff;
+    }
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      padding: 18mm 18mm;
+      box-sizing: border-box;
+      margin: 10mm auto;
+      border: 1px solid #dcdcdc;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      position: relative;
+    }
+    header { text-align: center; margin-bottom: 12px; }
+    h1 { margin: 6px 0; font-size: 20pt; }
+    h2 { margin: 14px 0 6px; font-size: 14pt; }
+    h3 { margin: 10px 0; font-size: 12pt; }
+    .objectives { background: #f7fbff; padding: 10px; border-left: 4px solid #3b82f6; }
+    ul.objectives-list { margin: 8px 0 0 18px; }
+    section { margin-bottom: 10px; }
+    .operator-card { border: 1px solid #e6eef8; background: #ffffff; padding: 10px; border-radius: 6px; box-shadow: 0 1px 0 rgba(0,0,0,0.02); margin-bottom: 8px; }
+    .meta { font-size: 10pt; color: #444; }
+    .definition { margin: 8px 0; font-size: 11pt; }
+    pre.code { background: #f4f6fb; padding: 10px; border-radius: 4px; overflow-x: auto; font-family: Menlo, Consolas, monospace; font-size: 9.5pt; }
+    .nav-buttons { text-align: center; margin-top: 20px; }
+    .nav-buttons button { padding: 8px 16px; margin: 0 5px; font-size: 12pt; border: none; border-radius: 4px; cursor: pointer; background-color: #3b82f6; color: white; }
+    .nav-buttons button:hover { background-color: #2563eb; }
+    footer { position: absolute; bottom: 18mm; left: 18mm; right: 18mm; font-size: 9pt; color: #666; }
+    @media print { body { background: white; } .page { margin: 0; border: none; box-shadow: none; } footer { position: fixed; bottom: 6mm; } .nav-buttons { display: none; } }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <h1>C++ - Logical Operators</h1>
+    </header>
+
+    <section class="objectives">
+      <h2>Learning Objectives</h2>
+      <ul class="objectives-list">
+        <li>To combine multiple conditions using logical operators.</li>
+        <li>To make more complex decisions in programs.</li>
+        <li>To implement conditions in loops, if-else statements, and validations.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Logical Operators Covered</h2>
+      <p class="meta">Operators in this document: <code>&& (AND), || (OR), ! (NOT)</code></p>
+    </section>
+
+    <section>
+      <h2>1. Logical AND (<code>&&</code>)</h2>
+      <div class="operator-card">
+        <h3>Detailed definition</h3>
+        <p class="definition">The logical AND operator (<code>&&</code>) returns <code>true</code> if both operands are true, otherwise it returns <code>false</code>.</p>
+        <h3>Example</h3>
+        <pre class="code">int a = 5;
+int b = 10;
+if(a &gt; 0 && b &gt; 0) {
+    cout &lt;&lt; "Both a and b are positive" &lt;&lt; endl;
+}</pre>
+      </div>
+    </section>
+
+    <section>
+      <h2>2. Logical OR (<code>||</code>)</h2>
+      <div class="operator-card">
+        <h3>Detailed definition</h3>
+        <p class="definition">The logical OR operator (<code>||</code>) returns <code>true</code> if at least one of the operands is true. Returns <code>false</code> only if both operands are false.</p>
+        <h3>Example</h3>
+        <pre class="code">int a = -5;
+int b = 10;
+if(a &gt; 0 || b &gt; 0) {
+    cout &lt;&lt; "At least one of a or b is positive" &lt;&lt; endl;
+}</pre>
+      </div>
+    </section>
+
+    <section>
+      <h2>3. Logical NOT (<code>!</code>)</h2>
+      <div class="operator-card">
+        <h3>Detailed definition</h3>
+        <p class="definition">The logical NOT operator (<code>!</code>) negates the value of its operand. Returns <code>true</code> if the operand is false, and <code>false</code> if the operand is true.</p>
+        <h3>Example</h3>
+        <pre class="code">bool isRaining = false;
+if(!isRaining) {
+    cout &lt;&lt; "It is not raining" &lt;&lt; endl;
+}</pre>
+      </div>
+    </section>
+
+    <section>
+      <h2>Real-world Example Using All Logical Operators</h2>
+      <div class="operator-card">
+        <h3>Login Validation</h3>
+        <pre class="code">bool usernameCorrect = true;
+bool passwordCorrect = false;
+
+if(usernameCorrect && passwordCorrect) {
+    cout &lt;&lt; "Login successful" &lt;&lt; endl;
+}
+if(usernameCorrect || passwordCorrect) {
+    cout &lt;&lt; "Partial information correct" &lt;&lt; endl;
+}
+if(!usernameCorrect) {
+    cout &lt;&lt; "Username is incorrect" &lt;&lt; endl;
+}</pre>
+      </div>
+
+      <div class="nav-buttons">
+        <a href="comparisonoperator.html"><button>&laquo; Previous</button></a>
+        <a href="inde_bitwise.html"><button>Next &raquo;</button></a>
+      </div>
+    </section>
+
+    <footer></footer>
+  </div>
+</body>
+</html>
